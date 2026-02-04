@@ -1,4 +1,4 @@
-import 'package:depi/views/home_view.dart';
+import 'package:depi/views/best_deals_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -23,7 +23,7 @@ class FastFoodApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       theme: ThemeData(textTheme: GoogleFonts.notoKufiArabicTextTheme()),
-      home: const HomeView(),
+      home: const BestDealsView(),
     );
   }
 }

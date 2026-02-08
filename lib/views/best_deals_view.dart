@@ -14,11 +14,20 @@ class BestDealsView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-              'assets/images/banner.png',
-              width: 500,
+            Container(
+              width: double.infinity,
               height: 220,
-              fit: BoxFit.fill,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30),
+                ),
+                image: DecorationImage(
+                  image: AssetImage('assets/images/banner.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              //
             ),
             const SizedBox(height: 20),
             Padding(
@@ -172,68 +181,36 @@ class BestDealsView extends StatelessWidget {
                     textAlign: TextAlign.start,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 20),
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomMealCardWidget(
-                                imagePath: AssetImage(
-                                  'assets/images/chicken.png',
-                                ),
-                                color: Color(0xffFEEEEC),
-                                width: 180,
-                                height: 150,
-                                borderRadius: 10,
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                'معكرونه بالصوص و قطع بانية حار',
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                '2.20 د.ك',
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color(0xff868686),
-                                ),
-                              ),
-                            ],
-                          ),
-                          CustomTextMealWidget(
-                            imagePath: AssetImage('assets/images/fries.png'),
-                          ),
-                        ],
+                  CustomTextMealWidget(
+                    meals: [
+                      MealItem(
+                        imagePath: 'assets/images/chicken_rec.png',
+                        name: 'معكرونه بالصوص و قطع بانية حار',
+                        price: '2.20 د.ك',
                       ),
-                      SizedBox(height: 20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CustomTextMealWidget(
-                            imagePath: AssetImage('assets/images/eggs.png'),
-                          ),
-                          CustomTextMealWidget(
-                            imagePath: AssetImage('assets/images/pizza.png'),
-                          ),
-                        ],
+                      MealItem(
+                        imagePath: 'assets/images/fries.png',
+                        name: 'معكرونه بالصوص و قطع بانية حار',
+                        price: '2.20 د.ك',
+                      ),
+                      MealItem(
+                        imagePath: 'assets/images/eggs.png',
+                        name: 'معكرونه بالصوص و قطع بانية حار',
+                        price: '2.20 د.ك',
+                      ),
+                      MealItem(
+                        imagePath: 'assets/images/pizza.png',
+                        name: 'معكرونه بالصوص و قطع بانية حار',
+                        price: '2.20 د.ك',
                       ),
                     ],
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   Text(
                     '🍕 بيتزا',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   CustomRowMealWidget(),
                   SizedBox(height: 20),
                   Divider(),

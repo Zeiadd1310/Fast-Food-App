@@ -181,6 +181,7 @@ class BestDealsView extends StatelessWidget {
                     textAlign: TextAlign.start,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
+                  const SizedBox(height: 20),
                   CustomTextMealWidget(
                     meals: [
                       TextMealItem(
@@ -209,6 +210,8 @@ class BestDealsView extends StatelessWidget {
                     '🍕 بيتزا',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
+                  const SizedBox(height: 20),
+
                   CustomRowMealWidget(
                     meals: [
                       MealItem(

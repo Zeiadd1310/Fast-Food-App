@@ -25,6 +25,7 @@ class CustomRowMealWidget extends StatelessWidget {
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       itemCount: meals.length,
+      padding: EdgeInsets.zero,
       itemBuilder: (context, index) {
         final meal = meals[index];
         final isLast = index == meals.length - 1;

@@ -5,7 +5,11 @@ class TextMealItem {
   final String name;
   final String price;
 
-  TextMealItem({required this.imagePath, required this.name, required this.price});
+  TextMealItem({
+    required this.imagePath,
+    required this.name,
+    required this.price,
+  });
 }
 
 class CustomTextMealWidget extends StatelessWidget {
@@ -25,6 +29,7 @@ class CustomTextMealWidget extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: meals.length,
+      padding: EdgeInsets.zero,
       itemBuilder: (context, index) {
         final meal = meals[index];
         return Column(

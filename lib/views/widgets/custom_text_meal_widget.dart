@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class MealItem {
+class TextMealItem {
   final String imagePath;
   final String name;
   final String price;
 
-  MealItem({required this.imagePath, required this.name, required this.price});
+  TextMealItem({required this.imagePath, required this.name, required this.price});
 }
 
 class CustomTextMealWidget extends StatelessWidget {
   const CustomTextMealWidget({super.key, required this.meals});
 
-  final List<MealItem> meals;
+  final List<TextMealItem> meals;
 
   @override
   Widget build(BuildContext context) {

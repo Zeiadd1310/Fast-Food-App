@@ -1,5 +1,4 @@
 import 'package:depi/views/widgets/custom_horizontal_container_widget.dart';
-import 'package:depi/views/widgets/custom_meal_card_widget.dart';
 import 'package:depi/views/widgets/custom_row_meal_widget.dart';
 import 'package:depi/views/widgets/custom_text_meal_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +9,7 @@ class BestDealsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.white,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -183,43 +183,57 @@ class BestDealsView extends StatelessWidget {
                   ),
                   CustomTextMealWidget(
                     meals: [
-                      MealItem(
+                      TextMealItem(
                         imagePath: 'assets/images/chicken_rec.png',
                         name: 'معكرونه بالصوص و قطع بانية حار',
                         price: '2.20 د.ك',
                       ),
-                      MealItem(
+                      TextMealItem(
                         imagePath: 'assets/images/fries.png',
                         name: 'معكرونه بالصوص و قطع بانية حار',
                         price: '2.20 د.ك',
                       ),
-                      MealItem(
+                      TextMealItem(
                         imagePath: 'assets/images/eggs.png',
                         name: 'معكرونه بالصوص و قطع بانية حار',
                         price: '2.20 د.ك',
                       ),
-                      MealItem(
+                      TextMealItem(
                         imagePath: 'assets/images/pizza.png',
                         name: 'معكرونه بالصوص و قطع بانية حار',
                         price: '2.20 د.ك',
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
                   Text(
                     '🍕 بيتزا',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 20),
-                  CustomRowMealWidget(),
-                  SizedBox(height: 20),
-                  Divider(),
-                  SizedBox(height: 20),
-                  CustomRowMealWidget(),
-                  SizedBox(height: 20),
-                  Divider(),
-                  SizedBox(height: 20),
-                  CustomRowMealWidget(),
+                  CustomRowMealWidget(
+                    meals: [
+                      MealItem(
+                        title: 'معكرونه بالصوص و قطع بانية حار',
+                        description:
+                            'هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.',
+                        price: '2.20 د.ك',
+                        image: 'assets/images/spaghetti.png',
+                      ),
+                      MealItem(
+                        title: 'معكرونه بالصوص و قطع بانية حار',
+                        description:
+                            'هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.',
+                        price: '2.20 د.ك',
+                        image: 'assets/images/spaghetti.png',
+                      ),
+                      MealItem(
+                        title: 'معكرونه بالصوص و قطع بانية حار',
+                        description:
+                            'هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.',
+                        price: '2.20 د.ك',
+                        image: 'assets/images/spaghetti.png',
+                      ),
+                    ],
+                  ),
                   SizedBox(height: 30),
                   Container(
                     width: double.infinity,

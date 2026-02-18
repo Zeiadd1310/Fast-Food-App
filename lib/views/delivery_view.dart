@@ -1,4 +1,4 @@
-import 'package:depi/views/widgets/custom_row_meal_widget.dart';
+import 'package:depi/views/widgets/custom_back_button.dart';
 import 'package:flutter/material.dart';
 
 class DeliveryView extends StatelessWidget {
@@ -17,23 +17,7 @@ class DeliveryView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Color(0xffF55540),
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 4.0),
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 18,
-                      ),
-                    ),
-                  ),
+                  CustomBackButton(),
                   Text(
                     'تتبع الطلب',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),

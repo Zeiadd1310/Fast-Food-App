@@ -1,4 +1,4 @@
-import 'package:depi/views/widgets/custom_meal_card_widget.dart';
+import 'package:depi/widgets/custom_meal_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class CustomMealInfoWidget extends StatelessWidget {

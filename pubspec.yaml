@@ -29,6 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.8
+  floating_bottom_bar:
+    path: ./packages/floating_bottom_bar
   flutter:
     sdk: flutter
   flutter_localizations:

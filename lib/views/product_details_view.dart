@@ -1,4 +1,4 @@
-import 'package:depi/views/widgets/custom_back_button.dart';
+import 'package:depi/widgets/custom_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

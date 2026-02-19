@@ -1,6 +1,6 @@
-import 'package:depi/views/widgets/custom_horizontal_container_widget.dart';
-import 'package:depi/views/widgets/custom_row_meal_widget.dart';
-import 'package:depi/views/widgets/custom_text_meal_widget.dart';
+import 'package:depi/widgets/custom_horizontal_container_widget.dart';
+import 'package:depi/widgets/custom_row_meal_widget.dart';
+import 'package:depi/widgets/custom_text_meal_widget.dart';
 import 'package:flutter/material.dart';
 
 class BestDealsView extends StatelessWidget {

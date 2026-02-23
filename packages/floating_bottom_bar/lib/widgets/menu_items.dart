@@ -61,18 +61,14 @@ class _BottomBarItemsState extends State<BottomBarItems> {
                 color: widget.barColor,
                 child: SizedBox(
                   height: Dimens.containerHeight,
-                  child: Row(
-                    children: _listBottomBarItemsChild,
-                  ),
+                  child: Row(children: _listBottomBarItemsChild),
                 ),
               )
             : Container(
                 decoration: BoxDecoration(gradient: widget.barGradient),
                 child: SizedBox(
                   height: Dimens.containerHeight,
-                  child: Row(
-                    children: _listBottomBarItemsChild,
-                  ),
+                  child: Row(children: _listBottomBarItemsChild),
                 ),
               ),
       ),
@@ -81,16 +77,13 @@ class _BottomBarItemsState extends State<BottomBarItems> {
 
   /// [_generateBottomBarItems]
   _generateBottomBarItems() {
-    double width = MediaQuery.of(context).size.width /
+    double width =
+        MediaQuery.of(context).size.width /
         (widget.bottomBarItemsList.length + 1);
     _listBottomBarItemsChild.clear();
     widget.bottomBarItemsList.asMap().forEach((itemIndex, value) {
       if (centerIndex == itemIndex) {
-        _listBottomBarItemsChild.add(
-          SizedBox(
-            width: width,
-          ),
-        );
+        _listBottomBarItemsChild.add(SizedBox(width: width));
       }
       _listBottomBarItemsChild.add(
         BottomBarItemsChild(

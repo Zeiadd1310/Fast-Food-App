@@ -6,7 +6,6 @@ import 'package:floating_bottom_bar/util/event_bus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_svg/svg.dart';
 
 import 'constants/enums.dart';
 
@@ -61,7 +60,8 @@ class AnimatedBottomNavigationBar extends StatefulWidget {
 }
 
 class AnimatedBottomNavigationBarState
-    extends State<AnimatedBottomNavigationBar> with TickerProviderStateMixin {
+    extends State<AnimatedBottomNavigationBar>
+    with TickerProviderStateMixin {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -86,9 +86,7 @@ class AnimatedBottomNavigationBarState
             barGradient: widget.barGradient,
             controller: widget.controller,
           ),
-          AnimatedButton(
-            bottomBarCenterModel: widget.bottomBarCenterModel,
-          ),
+          AnimatedButton(bottomBarCenterModel: widget.bottomBarCenterModel),
         ],
       ),
     );
@@ -99,8 +97,10 @@ class AnimatedBottomNavigationBarState
 
   /// Check validations like maximum items exceed and item count is even.
   void _checkValidations() {
-    assert(widget.bottomBar.length <= Dimens.maximumItems,
-        Strings.menuItemsMaximum);
+    assert(
+      widget.bottomBar.length <= Dimens.maximumItems,
+      Strings.menuItemsMaximum,
+    );
     assert(isEvenCount(widget.bottomBar.length), Strings.menuItemsMustBeEven);
   }
 }

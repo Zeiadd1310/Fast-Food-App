@@ -1,6 +1,8 @@
+import 'package:depi/widgets/custom_adding_item_widget.dart';
 import 'package:depi/widgets/custom_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductDetailsView extends StatelessWidget {
   const ProductDetailsView({super.key});
@@ -30,7 +32,7 @@ class ProductDetailsView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.pop(context),
+                          onTap: () => context.pop(),
                           child: CustomBackButton(),
                         ),
                         Image.asset('assets/images/notification.png'),
@@ -72,38 +74,7 @@ class ProductDetailsView extends StatelessWidget {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      Container(
-                        width: 100.w,
-                        height: 35.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.1),
-                              spreadRadius: 2,
-                              blurRadius: 10,
-                              offset: Offset(0, 4),
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Icon(
-                              Icons.remove,
-                              color: Color(0xffFFD2B0),
-                              size: 24.sp,
-                            ),
-                            Text('1', style: TextStyle(fontSize: 16.sp)),
-                            Icon(
-                              Icons.add,
-                              color: Color(0xffF55540),
-                              size: 24.sp,
-                            ),
-                          ],
-                        ),
-                      ),
+                      CustomAddingItemWidget(),
                     ],
                   ),
                   SizedBox(height: 12.h),

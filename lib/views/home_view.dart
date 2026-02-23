@@ -1,5 +1,4 @@
 import 'package:depi/core/utils/functions/app_router.dart';
-import 'package:depi/widgets/custom_bottom_bar.dart';
 import 'package:depi/widgets/custom_meal_card_widget.dart';
 import 'package:depi/widgets/custom_meal_info_widget.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,10 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -153,7 +155,6 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomBottomBar(),
     );
   }
 }

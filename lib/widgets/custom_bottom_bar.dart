@@ -50,7 +50,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
           dotColor: const Color(0xffF55540),
           onTap: (_) {
             setState(() => _selectedIndex = 2);
-            GoRouter.of(context).push(AppRouter.kShoppingCartView);
+            GoRouter.of(context).push(AppRouter.kOrdersView);
           },
         ),
         BottomBarItem(

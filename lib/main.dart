@@ -1,11 +1,21 @@
 import 'package:depi/core/utils/functions/app_router.dart';
+import 'package:depi/features/cart/controller/cart_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const FastFoodApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => CartController()),
+      ],
+
+      child: const FastFoodApp(),
+    ),
+  );
 }
 
 class FastFoodApp extends StatelessWidget {

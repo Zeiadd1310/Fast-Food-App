@@ -1,8 +1,10 @@
 import 'package:depi/constants.dart';
+import 'package:depi/features/cart/controller/cart_controller.dart';
 import 'package:depi/widgets/custom_adding_item_widget.dart';
 import 'package:depi/widgets/custom_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class ShoppingCartView extends StatelessWidget {
   const ShoppingCartView({super.key});
@@ -167,7 +169,9 @@ class ShoppingCartView extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '\$689.99',
+                    context.watch<CartController>().totalPrice.toStringAsFixed(
+                      2,
+                    ),
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,

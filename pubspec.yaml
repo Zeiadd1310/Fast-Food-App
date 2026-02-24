@@ -28,11 +28,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^9.2.0
   cupertino_icons: ^1.0.8
   floating_bottom_bar:
     path: ./packages/floating_bottom_bar
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
   flutter_localizations:
     sdk: flutter
   flutter_screenutil: ^5.9.3

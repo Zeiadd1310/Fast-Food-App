@@ -2,7 +2,7 @@ import 'package:depi/views/best_deals_view.dart';
 import 'package:depi/views/delivery_view.dart';
 import 'package:depi/views/home_view.dart';
 import 'package:depi/views/orders_view.dart';
-import 'package:depi/views/product_details_view.dart';
+import 'package:depi/features/product_details/views/product_details_view.dart';
 import 'package:depi/views/shopping_cart_view.dart';
 import 'package:depi/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';

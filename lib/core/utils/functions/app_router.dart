@@ -1,3 +1,4 @@
+import 'package:depi/features/account/views/account_view.dart';
 import 'package:depi/views/best_deals_view.dart';
 import 'package:depi/views/delivery_view.dart';
 import 'package:depi/views/home_view.dart';
@@ -15,6 +16,7 @@ abstract class AppRouter {
   static const kDeliveryView = '/delivery_view';
   static const kShoppingCartView = '/shopping_cart_view';
   static const kOrdersView = '/orders_view';
+  static const kAccountView = '/account_view';
 
   static final router = GoRouter(
     routes: [
@@ -33,6 +35,10 @@ abstract class AppRouter {
           GoRoute(
             path: kDeliveryView,
             builder: (context, state) => const DeliveryView(),
+          ),
+          GoRoute(
+            path: kAccountView,
+            builder: (context, state) => const AccountView(),
           ),
         ],
       ),

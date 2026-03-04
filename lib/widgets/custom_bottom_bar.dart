@@ -41,7 +41,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
           dotColor: const Color(0xffF55540),
           onTap: (_) {
             setState(() => _selectedIndex = 1);
-            GoRouter.of(context).push(AppRouter.kBestDealsView);
+            GoRouter.of(context).push(AppRouter.kFavouritesView);
           },
         ),
         BottomBarItem(

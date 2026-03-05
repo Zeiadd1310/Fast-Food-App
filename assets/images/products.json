@@ -1,0 +1,54 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "برغر",
+            "description": "برغر مشوي طازج مع الخس والطماطم والجبن",
+            "price": 200,
+            "rating": 4.5,
+            "category": "وجبات سريعة",
+            "ratingsCount": 1150,
+            "image": "assets/burger.png"
+        },
+        {
+            "id": 2,
+            "name": "دجاج",
+            "description": "دجاج مشوي طري مع الأعشاب والتوابل",
+            "price": 350,
+            "rating": 4.0,
+            "ratingsCount": 850,
+            "category": "مشويات",
+            "image": "assets/chicken.png"
+        },
+        {
+            "id": 3,
+            "name": "لحم",
+            "description": "لحم مشوي طازج مع الأعشاب والتوابل",
+            "price": 400,
+            "rating": 4.2,
+            "ratingsCount": 750,
+            "category": "ستيك",
+            "image": "assets/meat.png"
+        },
+        {
+            "id": 4,
+            "name": "مأكولات بحرية",
+            "description": "طبق بحري فاخر مع الروبيان والكركند والسمك الطازج",
+            "price": 500,
+            "rating": 4.8,
+            "ratingsCount": 1200,
+            "category": "بحري",
+            "image": "assets/seafood.png"
+        },
+        {
+            "id": 5,
+            "name": "ستيك",
+            "description": "ستيك مشوي طري مع زبدة الثوم",
+            "price": 450,
+            "rating": 4.6,
+            "ratingsCount": 900,
+            "category": "ستيك",
+            "image": "assets/meat.png"
+        }
+    ]
+}

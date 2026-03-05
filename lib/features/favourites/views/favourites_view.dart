@@ -1,6 +1,8 @@
+import 'package:depi/features/favourites/controller/favourites_controller.dart';
 import 'package:depi/features/favourites/views/widgets/custom_favourite_meal_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class FavouritesView extends StatelessWidget {
   const FavouritesView({super.key});
@@ -25,11 +27,33 @@ class FavouritesView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 25.h),
-              CustomFavouriteMealWidget(),
-              SizedBox(height: 25.h),
-              CustomFavouriteMealWidget(),
-              SizedBox(height: 25.h),
-              CustomFavouriteMealWidget(),
+              Expanded(
+                child: Consumer<FavouritesController>(
+                  builder: (context, favouritesController, _) {
+                    if (favouritesController.favouritesList.isEmpty) {
+                      return Center(
+                        child: Text(
+                          'لا توجد عناصر مفضلة',
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            color: Color(0xff868686),
+                          ),
+                        ),
+                      );
+                    }
+                    return ListView.separated(
+                      itemCount: favouritesController.favouritesList.length,
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: 16.h),
+                      itemBuilder: (context, index) {
+                        return CustomFavouriteMealWidget(
+                          product: favouritesController.favouritesList[index],
+                        );
+                      },
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),

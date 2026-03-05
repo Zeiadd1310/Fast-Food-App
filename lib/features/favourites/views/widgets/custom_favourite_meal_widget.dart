@@ -1,9 +1,14 @@
 import 'package:depi/constants.dart';
+import 'package:depi/features/home/models/product_model.dart';
+import 'package:depi/features/favourites/controller/favourites_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class CustomFavouriteMealWidget extends StatelessWidget {
-  const CustomFavouriteMealWidget({super.key});
+  final Products product;
+
+  const CustomFavouriteMealWidget({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +34,10 @@ class CustomFavouriteMealWidget extends StatelessWidget {
             Row(
               children: [
                 Image.asset(
-                  'assets/images/food.png',
+                  product.image ?? 'assets/images/food.png',
                   width: 80.w,
                   height: 65.h,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
                 SizedBox(width: 12.w),
                 Expanded(
@@ -43,7 +48,7 @@ class CustomFavouriteMealWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'اسم الوجبة هنا',
+                            product.name ?? 'اسم الوجبة',
                             style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
@@ -51,7 +56,7 @@ class CustomFavouriteMealWidget extends StatelessWidget {
                           ),
                           SizedBox(height: 4.h),
                           Text(
-                            'اسم المطعم',
+                            product.category ?? 'الفئة',
                             style: TextStyle(
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w600,
@@ -62,7 +67,7 @@ class CustomFavouriteMealWidget extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                '250\$',
+                                '${product.price ?? 0} ج.م',
                                 style: TextStyle(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w700,
@@ -72,7 +77,7 @@ class CustomFavouriteMealWidget extends StatelessWidget {
                               Icon(Icons.star, color: kPrimaryColor, size: 20),
                               SizedBox(width: 2.w),
                               Text(
-                                '0.0',
+                                '${product.rating ?? 0.0}',
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
@@ -81,7 +86,7 @@ class CustomFavouriteMealWidget extends StatelessWidget {
                               ),
                               SizedBox(width: 3.w),
                               Text(
-                                '(0)',
+                                '(${product.ratingsCount ?? 0})',
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
@@ -95,7 +100,22 @@ class CustomFavouriteMealWidget extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(Icons.favorite, color: kPrimaryColor, size: 25),
+                          Consumer<FavouritesController>(
+                            builder: (context, favouritesController, _) {
+                              return GestureDetector(
+                                onTap: () {
+                                  favouritesController.removeFromFavourites(
+                                    product.id ?? 0,
+                                  );
+                                },
+                                child: Icon(
+                                  Icons.favorite,
+                                  color: kPrimaryColor,
+                                  size: 25,
+                                ),
+                              );
+                            },
+                          ),
                           SizedBox(height: 15.h),
                           Container(
                             width: 25.w,

@@ -2,8 +2,10 @@ import 'package:depi/core/utils/functions/app_router.dart';
 import 'package:depi/features/home/home_cubit/home_cubit.dart';
 import 'package:depi/widgets/custom_meal_card_widget.dart';
 import 'package:depi/widgets/custom_meal_info_widget.dart';
+import 'package:depi/widgets/my_location_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
@@ -17,43 +19,7 @@ class HomeView extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           backgroundColor: Colors.white,
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            scrolledUnderElevation: 0,
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset('assets/images/avatar.png'),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Image.asset('assets/images/navigation.png'),
-                        Text(
-                          'الموقع الحالي',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      '19 الشيخ احمد الصاوي، مدينة نصر',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff515151),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 8),
-                Image.asset('assets/images/notification.png'),
-              ],
-            ),
-          ),
+
           body: (state is HomeLoading)
               ? Center(child: LottieBuilder.asset('assets/images/loading.json'))
               : SingleChildScrollView(
@@ -62,6 +28,9 @@ class HomeView extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        SizedBox(height: 24.h),
+                        MyLocationWidget(),
+                        SizedBox(height: 10.h),
                         TextField(
                           decoration: InputDecoration(
                             hintText: 'تبحث عن وجبة معينه ؟',

@@ -46,6 +46,10 @@ abstract class AppRouter {
             path: kFavouritesView,
             builder: (context, state) => const FavouritesView(),
           ),
+          GoRoute(
+            path: kOrdersView,
+            builder: (context, state) => const OrdersView(),
+          ),
         ],
       ),
       GoRoute(
@@ -55,10 +59,6 @@ abstract class AppRouter {
       GoRoute(
         path: kShoppingCartView,
         builder: (context, state) => const ShoppingCartView(),
-      ),
-      GoRoute(
-        path: kOrdersView,
-        builder: (context, state) => const OrdersView(),
       ),
     ],
   );

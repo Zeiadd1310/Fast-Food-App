@@ -2,6 +2,7 @@ import 'package:depi/features/account/account_cubit/account_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 
 class AccountView extends StatelessWidget {
   const AccountView({super.key});
@@ -21,7 +22,9 @@ class AccountView extends StatelessWidget {
             child: BlocBuilder<AccountCubit, AccountState>(
               builder: (context, state) {
                 if (state is AccountLoading) {
-                  return const Center(child: CircularProgressIndicator());
+                  return Center(
+                    child: LottieBuilder.asset('assets/images/loading.json'),
+                  );
                 } else if (state is AccountSuccess) {
                   return Column(
                     children: [

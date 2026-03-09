@@ -1,8 +1,10 @@
 import 'package:depi/features/account/views/account_view.dart';
 import 'package:depi/features/favourites/views/favourites_view.dart';
+import 'package:depi/views/animation_view.dart';
 import 'package:depi/views/best_deals_view.dart';
 import 'package:depi/views/delivery_view.dart';
 import 'package:depi/features/home/views/home_view.dart';
+import 'package:depi/views/my_orders_view.dart';
 import 'package:depi/views/orders_view.dart';
 import 'package:depi/features/product_details/views/product_details_view.dart';
 import 'package:depi/views/shopping_cart_view.dart';
@@ -19,6 +21,8 @@ abstract class AppRouter {
   static const kOrdersView = '/orders_view';
   static const kAccountView = '/account_view';
   static const kFavouritesView = '/favourites_view';
+  static const kAnimationView = '/animation_view';
+  static const kMyOrdersView = '/my_orders_view';
 
   static final router = GoRouter(
     routes: [
@@ -50,6 +54,11 @@ abstract class AppRouter {
             path: kOrdersView,
             builder: (context, state) => const OrdersView(),
           ),
+
+          GoRoute(
+            path: kMyOrdersView,
+            builder: (context, state) => const MyOrdersView(),
+          ),
         ],
       ),
       GoRoute(
@@ -59,6 +68,10 @@ abstract class AppRouter {
       GoRoute(
         path: kShoppingCartView,
         builder: (context, state) => const ShoppingCartView(),
+      ),
+      GoRoute(
+        path: kAnimationView,
+        builder: (context, state) => const AnimationView(),
       ),
     ],
   );

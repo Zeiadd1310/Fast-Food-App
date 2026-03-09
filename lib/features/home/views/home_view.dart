@@ -100,11 +100,16 @@ class HomeView extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 24),
-                        Image.asset(
-                          'assets/images/sale.png',
-                          width: double.infinity,
-                          height: 200,
-                          fit: BoxFit.fill,
+                        GestureDetector(
+                          onTap: () {
+                            GoRouter.of(context).push(AppRouter.kAnimationView);
+                          },
+                          child: Image.asset(
+                            'assets/images/sale.png',
+                            width: double.infinity,
+                            height: 200,
+                            fit: BoxFit.fill,
+                          ),
                         ),
                         SizedBox(height: 24),
                         Text(

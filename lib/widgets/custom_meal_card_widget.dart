@@ -1,4 +1,6 @@
+import 'package:depi/core/utils/functions/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomMealCardWidget extends StatelessWidget {
   const CustomMealCardWidget({
@@ -22,13 +24,18 @@ class CustomMealCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          width: width,
-          height: height,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(borderRadius),
-            color: color,
-            image: DecorationImage(image: imagePath, fit: BoxFit.contain),
+        InkWell(
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kProductsView);
+          },
+          child: Container(
+            width: width,
+            height: height,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(borderRadius),
+              color: color,
+              image: DecorationImage(image: imagePath, fit: BoxFit.contain),
+            ),
           ),
         ),
         if (title != null) ...[

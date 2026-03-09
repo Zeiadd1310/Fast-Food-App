@@ -30,6 +30,9 @@ environment:
 dependencies:
   bloc: ^9.2.0
   cupertino_icons: ^1.0.8
+  dartz: ^0.10.1
+  dio: ^5.9.2
+  equatable: ^2.0.8
   floating_bottom_bar:
     path: ./packages/floating_bottom_bar
   flutter:

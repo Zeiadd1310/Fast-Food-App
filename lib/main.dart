@@ -1,7 +1,11 @@
+import 'package:depi/core/utils/functions/api_service.dart';
 import 'package:depi/core/utils/functions/app_router.dart';
 import 'package:depi/features/cart/controller/cart_controller.dart';
 import 'package:depi/features/favourites/controller/favourites_controller.dart';
 import 'package:depi/features/home/home_cubit/home_cubit.dart';
+import 'package:depi/features/products/products_cubit/products_cubit.dart';
+import 'package:depi/features/products/repos/products_repo_impl.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -11,9 +15,14 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    MultiBlocProvider(
+    MultiProvider(
       providers: [
         BlocProvider(create: (context) => HomeCubit()..loadProducts()),
+        BlocProvider(
+          create: (context) =>
+              ProductsCubit(ProductsRepoImpl(ApiService(Dio())))
+                ..fetchProducts(),
+        ),
         ChangeNotifierProvider(create: (context) => CartController()),
         ChangeNotifierProvider(create: (context) => FavouritesController()),
       ],

@@ -68,6 +68,7 @@ class HomeView extends StatelessWidget {
                               width: 85,
                               height: 85,
                               borderRadius: 16,
+                              enableAnimation: true,
                             ),
                             CustomMealCardWidget(
                               imagePath: AssetImage(
@@ -78,6 +79,7 @@ class HomeView extends StatelessWidget {
                               width: 85,
                               height: 85,
                               borderRadius: 16,
+                              enableAnimation: true,
                             ),
                             CustomMealCardWidget(
                               imagePath: AssetImage(
@@ -88,6 +90,7 @@ class HomeView extends StatelessWidget {
                               width: 85,
                               height: 85,
                               borderRadius: 16,
+                              enableAnimation: true,
                             ),
                             CustomMealCardWidget(
                               imagePath: AssetImage('assets/images/meat.png'),
@@ -96,6 +99,7 @@ class HomeView extends StatelessWidget {
                               width: 85,
                               height: 85,
                               borderRadius: 16,
+                              enableAnimation: true,
                             ),
                           ],
                         ),

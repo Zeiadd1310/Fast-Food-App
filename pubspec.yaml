@@ -33,6 +33,7 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.9.2
   equatable: ^2.0.8
+  firebase_core: ^4.6.0
   floating_bottom_bar:
     path: ./packages/floating_bottom_bar
   flutter:

@@ -1,7 +1,9 @@
+import 'package:depi/core/utils/functions/app_router.dart';
 import 'package:depi/features/account/account_cubit/account_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
 class AccountView extends StatelessWidget {
@@ -105,9 +107,14 @@ class AccountView extends StatelessWidget {
                         imagePath: 'assets/images/profile-delete.png',
                       ),
                       SizedBox(height: 25.h),
-                      CustomRowProfileWidget(
-                        text: 'تسجيل الخروج',
-                        imagePath: 'assets/images/logout.png',
+                      InkWell(
+                        onTap: () {
+                          GoRouter.of(context).push(AppRouter.kLoginView);
+                        },
+                        child: CustomRowProfileWidget(
+                          text: 'تسجيل الخروج',
+                          imagePath: 'assets/images/logout.png',
+                        ),
                       ),
                     ],
                   );

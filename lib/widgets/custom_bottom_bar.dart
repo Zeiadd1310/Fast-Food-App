@@ -69,7 +69,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
       bottomBarCenterModel: BottomBarCenterModel(
         centerIcon: FloatingCenterButton(
           child: GestureDetector(
-            onTap: () => GoRouter.of(context).push(AppRouter.kDeliveryView),
+            onTap: () => GoRouter.of(context).push(AppRouter.kUserListView),
             child: Image.asset(
               'assets/images/shopping-cart.png',
               width: 24,

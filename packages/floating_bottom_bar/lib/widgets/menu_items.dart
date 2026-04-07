@@ -103,7 +103,6 @@ class _BottomBarItemsState extends State<BottomBarItems> {
   void _handleOnTapCallback(int index, int itemIndex) {
     if (_currentIndex == index) return;
 
-    isCloseBtnAdded = false;
     widget.bottomBarItemsList[itemIndex].onTap?.call(itemIndex);
 
     _lastIndex = _currentIndex;

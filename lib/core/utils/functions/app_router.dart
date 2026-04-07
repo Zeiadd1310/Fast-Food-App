@@ -5,6 +5,7 @@ import 'package:depi/features/login/controllers/login_cubit.dart';
 import 'package:depi/features/products/views/products_view.dart';
 import 'package:depi/features/register/views/register_view.dart';
 import 'package:depi/features/register/controllers/register_cubit.dart';
+import 'package:depi/features/users/views/user_list_view.dart';
 import 'package:depi/views/animation_view.dart';
 import 'package:depi/views/best_deals_view.dart';
 import 'package:depi/views/delivery_view.dart';
@@ -32,6 +33,7 @@ abstract class AppRouter {
   static const kProductsView = '/products_view';
   static const kLoginView = '/';
   static const kRegisterView = '/register_view';
+  static const kUserListView = '/user_list_view';
 
   static final router = GoRouter(
     routes: [
@@ -103,6 +105,7 @@ abstract class AppRouter {
           child: const RegisterView(),
         ),
       ),
+      GoRoute(path: kUserListView, builder: (context, state) => UserListView()),
     ],
   );
 }

@@ -1,3 +1,5 @@
+import 'package:depi/features/users/models/users_model.dart';
+
 abstract class UsersState {}
 
 class UsersInitial extends UsersState {}
@@ -5,7 +7,7 @@ class UsersInitial extends UsersState {}
 class UsersLoading extends UsersState {}
 
 class UsersLoaded extends UsersState {
-  final List<String> users;
+  final List<UsersModel> users;
 
   UsersLoaded(this.users);
 }

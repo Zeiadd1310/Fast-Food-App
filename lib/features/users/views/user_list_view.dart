@@ -42,11 +42,75 @@ class UserListView extends StatelessWidget {
                 title: const Text('قائمة المستخدمين'),
                 backgroundColor: Colors.white,
               ),
-              body: ListView.builder(
-                itemCount: state.users.length,
-                itemBuilder: (context, index) {
-                  return ListTile(title: Text(state.users[index]));
-                },
+              body: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: SingleChildScrollView(
+                  child: Column(
+                    spacing: 16.h,
+                    children: [
+                      SizedBox(height: 0.h),
+                      TextField(
+                        controller: context.read<UsersCubit>().nameController,
+                        decoration: InputDecoration(
+                          labelText: 'اسم المستخدم',
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                      TextField(
+                        controller: context.read<UsersCubit>().ageController,
+                        decoration: InputDecoration(
+                          labelText: 'العمر',
+                          border: OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              context.read<UsersCubit>().addUsers();
+                            },
+                            child: Text('إضافة مستخدم'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              context.read<UsersCubit>().updateUser();
+                            },
+                            child: Text('تحديث مستخدم'),
+                          ),
+                        ],
+                      ),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: state.users.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: Text(state.users[index].fullName),
+                            subtitle: Text('العمر: ${state.users[index].age}'),
+                            trailing: IconButton(
+                              icon: Icon(Icons.edit),
+                              onPressed: () {
+                                context.read<UsersCubit>().selectUpdatedUser(
+                                  state.users[index],
+                                );
+                              },
+                            ),
+                            leading: IconButton(
+                              icon: Icon(Icons.delete, color: Colors.red),
+                              onPressed: () {
+                                context.read<UsersCubit>().deleteUser(
+                                  state.users[index].id!,
+                                );
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
               ),
             );
             // } else if (state is UsersInitial) {
